@@ -1,23 +1,26 @@
-let age: any = 25;
+// let greet: Function;
 
-age = true;
-console.log(age);
-age = 'hello';
-console.log(age);
-age = { name: 'luigi' };
-console.log(age);
+// example 1
+let greet: (a: string, b: string) => void;
 
-let mixed: any[] = [];
+greet = (name: string, greeting: string) => {
+  console.log(`${name} says ${greeting}`);
+}
 
-mixed.push(5);
-mixed.push('mario');
-mixed.push(false);
-console.log(mixed);
+// example 2
+let calc: (a: number, b: number, c: string) => number;
 
-let ninja: { name: any, age: any };
+calc = (numOne: number, numTwo: number, action: string) => {
+  if (action === 'add') {
+    return numOne + numTwo;
+  } else {
+    return numOne - numTwo;
+  }
+}
 
-ninja = { name: 'yoshi', age: 25 };
-console.log(ninja);
+// example 3
+let logDetails: (obj: {name: string, age: number}) => void;
 
-ninja = { name: 25, age: 'yoshi' };
-console.log(ninja);
+logDetails = (ninja: {name: string, age: number}) => {
+  console.log(`${ninja.name} is ${ninja.age} years old`);
+}
